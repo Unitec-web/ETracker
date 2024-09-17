@@ -5,7 +5,8 @@
 This will be our first project as a team to test our team work capabilities. this project tracks the expenditure and financial transactions and provide reports and statistics
 # Getting started
 1. Clone the staging branch of this repository.
-2. Open the project in your favourite code editor preferrably Visual Studio Code.
+2. For front-end developers clone the frontend branch and back-end developers should clone the backend branch.
+3. Open the project in your favourite code editor preferrably Visual Studio Code.
 # Rules or Folders and Files Naming Conventions
 - Directories with longer names should be named using hyphens-to-seperate-each-word.
 - Each directory has an example of how each folder and file belonging to that directory is to be named. PLEASE FOLLOW THE SAME CONVENTION.
