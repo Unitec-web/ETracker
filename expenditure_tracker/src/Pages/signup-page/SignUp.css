@@ -71,14 +71,14 @@ p{
   color: #FF0000;
   font-size: x-small;
 }
-label,
+.label,
 ::placeholder{
   font-size:small;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 10px;
   margin-bottom: 5px;
 }
-input{
+.input{
   padding: 10px;
   border-radius: 20px;
 }
@@ -126,7 +126,7 @@ input{
 .sign-with-thirdPart .login-btn{
   display: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .sign-with-thirdPart {
       width: 80%;
       align-items: center;
@@ -168,7 +168,8 @@ input{
   justify-content: center;
   align-items: center;
   margin: 1px auto;
-
+  /* width: fit-content; */
+width: 18rem;
 }
 .btn-facebook img,
 .btn-google img {
@@ -183,5 +184,13 @@ input{
 }
   
 
+.label,
+::placeholder{
+  margin: 1rem;
+}
+.input{
 
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
 }

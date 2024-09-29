@@ -4,8 +4,8 @@ import finance from    "../../Icons/finance1.png";
 import ellipDack from  '../../Icons/ellipse1.png'
 import ellipLight from '../../Icons/ellipse2.png'
 import rightArrow from '../../Icons/Arrow_right.png'
-
-function WelcomePage() {
+import { Link } from 'react-router-dom';
+function WelcomePage1() {
   return (
     <div className="container">
 
@@ -38,7 +38,7 @@ function WelcomePage() {
       </div>
 
       <div className="rigt-arrow">
-        <img src={rightArrow} alt="" width={20} height={20}/>
+       <Link to="/welcomepage2" style={{color:"white", textDecoration:"none"}}> <img src={rightArrow} alt="" width={20} height={20}/></Link>
       </div>
       
     </div>
@@ -46,4 +46,4 @@ function WelcomePage() {
   )
 }
 
-export default WelcomePage
+export default WelcomePage1

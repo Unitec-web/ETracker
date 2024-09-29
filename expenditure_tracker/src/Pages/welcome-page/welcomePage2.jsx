@@ -4,10 +4,10 @@ import ellipDack from "../../Icons/ellipse1.png";
 import ellipLight from "../../Icons/ellipse2.png";
 import sportTeam from "../../Icons/sport-team 1.png";
 import rightArrow from "../../Icons/Arrow_right.png";
-import leftArrow from "../../Icons/LeftArrow.png";
+import leftArrow from "../../Icons/Left Arrow.png";
+import { Link } from 'react-router-dom';
 
-
-function WelcomePage1() {
+function WelcomePage2() {
   return (
     <div className="container">
 
@@ -34,7 +34,7 @@ function WelcomePage1() {
       <div className="ellipse">
       <div className="ellipses-img">
         <div className="left-arrow">
-          <img className="left-arrow" src={leftArrow} alt=""width={20} height={20} />
+        <Link to="/" style={{color:"white", textDecoration:"none"}}> <img className="left-arrow" src={leftArrow} alt=""width={20} height={20} /> </Link>
         </div>
      
     
@@ -46,16 +46,17 @@ function WelcomePage1() {
       <div className="right-btn">
      
         <div className="btn-create-Acount">
-          <button>Create Acount</button></div>
-        <div className="btn-login">  <button>Login</button></div>
+        <Link id='b1' to="/register" style={{color:"white", textDecoration:"none"}}> <button htmlFor ="b1"> Create Acount</button></Link></div>
+        <div className="btn-login"> 
+          <Link to="/login" style={{color:"white", textDecoration:"none"}}> <button>Login</button></Link></div>
 
         
  
       </div>
-      <img className="leftarrow" src={leftArrow} alt=""width={10} height={30} />
+      <Link to="/" style={{color:"white", textDecoration:"none"}}><img className="leftarrow" src={leftArrow} alt=""width={10} height={30} /></Link>
     </div>
   </div>
   )
 }
 
-export default WelcomePage1
+export default WelcomePage2
