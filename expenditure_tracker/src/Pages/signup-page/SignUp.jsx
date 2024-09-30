@@ -8,7 +8,7 @@ import facebook from "../../Icons/facebook.png"
 import { Link } from "react-router-dom";
 function SignUp() {
   const [labledButton,setLabledButton]=useState({
-    username:"storm", 
+    username:"", 
     firstname:"",  
     email:"", 
     phonenumber:"",
