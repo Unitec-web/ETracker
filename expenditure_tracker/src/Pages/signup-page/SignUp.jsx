@@ -5,8 +5,13 @@ import LabledButton from "../../Components/LabledButton"
 import ButtonSignUp from "../../Components/ButtonSignUp"
 import google from "../../Icons/google.png"
 import facebook from "../../Icons/facebook.png"
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { doCreateUserWithEmailAndPassword } from "../../Firebase/auth";
+import { useAuth } from "../../context/context";
+
 function SignUp() {
+  const [isSigningUp,setIsSigningUp]= useState(false)
+  const {isloggedIn} = useAuth()
   const [labledButton,setLabledButton]=useState({
     username:"", 
     firstname:"",  
@@ -20,13 +25,29 @@ function SignUp() {
       return {...prevVal,[name]:value}
     })
   }
- const handleSubmit =(e)=>{
+ const handleSubmit =async(e)=>{
   e.preventDefault()
-  console.log(labledButton.username)
+  if(!isSigningUp){
+    setIsSigningUp(true)
+    await doCreateUserWithEmailAndPassword(labledButton.email,labledButton.password)
+    
+  }
+  
  
  }
+ const handleSignUpWithGoogle =(e)=>{
+  e.preventDefault()
+ //this will handle signing up with Google account
+ }
+ const handleSignUpWithFacebook = (e)=>{
+  e.preventDefault()
+  //this will handle signing up with Facebook account
+ }
+
   return (
     <div className="sign-upContainer">
+      {/* Navigate to home page if user successfully signed up */}
+      {isloggedIn && (<Navigate to={"/homepage"} replace={true} />)} 
       <div className="sign-upFlexContainer">
         <div className="sign-leftContainer">
           <img src={userprofile} alt="" />
@@ -54,8 +75,8 @@ function SignUp() {
             </form>
           </div>
           <div className="sign-with-thirdPart">
-          <ButtonSignUp img={google} title="Sign Up with Google"/>
-          <ButtonSignUp img={facebook} title="Sign Up with Facebook"/>
+          <ButtonSignUp onClick={(e)=>{handleSignUpWithGoogle(e)}} img={google} title="Sign Up with Google"/>
+          <ButtonSignUp onClick={(e)=>{handleSignUpWithFacebook(e)}} img={facebook} title="Sign Up with Facebook"/>
           <Link to="/login" className="login-btn" style={{ color: "white", textDecoration: "none" }}>
                 <button style={{ background: "none", color: "white", border: 'none' }}>
                     Login With Existing Account
