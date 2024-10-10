@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
     /* height: 100vh; */
 }
 .Login {
@@ -30,23 +31,18 @@
     margin-bottom: 15px;
 }
 
-.input {
+.logininput {
     display: flex;
     align-items: center;
     margin: auto;
-    width: 480px;
+    width: 400px;
+    border-color:transparent;
     height: 50px;
     background-color: #eaeaea;
-    border-radius: 30px;
-}
-
-.input input {
     padding-left: 30px;
-    height: 50px;
-    width: 400px;
-    background: transparent;
     border: none;
     font-size: 19px;
+    border-radius: 25px;
 }
 
 .underline {
@@ -72,13 +68,11 @@
     border: 1px solid #134B70;
     border-radius: 30px;
     height: 40px;
-    width: auto;
+    /* width: auto; */
     margin: 0 30px 0 30px;
-}
 
-.submit button {
-    width: 100%;
-    background: transparent;
+    width: 93%;
+    /* background: transparent; */
     border: none;
     font-size: large;
     font-weight: bold;
@@ -87,7 +81,6 @@
 
 .login_button {
     background: #FF7A00;
-    border-color: #FF7A00;
 }
 
 .forgotten_password {
@@ -100,6 +93,41 @@
 }
 
 .row .col button {
-    background: transparent;
+    
     border: none;   
+}
+@media (min-width: 500px) and (max-width:800px){
+    div.logindiv.row {
+        margin: 0px;
+        margin-top: 5%;
+        margin-right: 18%;
+        padding: 0px;
+    }
+
+    .logininput {
+        width: 40vh;
+    }
+    .img-fluid{
+        display: none;
+    }
+  
+}
+@media (max-width: 490px){
+    .img-fluid{
+        display: none;
+    }
+    .logininput {
+        width: 40vh;
+    }
+    .text-center{
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+    div.logindiv.row {
+        margin: 0px;
+        margin-top: 4%;
+        margin-right: 5%;
+        padding: 0px;
+    }
+   
 }
