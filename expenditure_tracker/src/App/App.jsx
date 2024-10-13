@@ -6,6 +6,7 @@ import SignUp from '../Pages/signup-page/SignUp';
 import HomePage from '../Pages/home-page/HomePage';
 import WelcomePage2 from '../Pages/welcome-page/welcomePage2';
 import { EtrackerAuth } from '../context/context';
+import Total from '../Components/ui/Total';
 function App() {
   return (
     
@@ -16,6 +17,7 @@ function App() {
       <Route path='/homepage' element={<EtrackerAuth><HomePage /></EtrackerAuth>}/>
       <Route path='/login' element={<EtrackerAuth> <Login /></EtrackerAuth>} />
       <Route path='/register' element={<EtrackerAuth><SignUp /></EtrackerAuth>} />
+      <Route path='/Total' element={<Total/>}/>
     </Routes>
   
   );
