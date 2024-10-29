@@ -2,8 +2,14 @@ import React, { useState } from 'react'
 import { doSignOut } from '../../Firebase/auth';
 import { useAuth } from '../../context/context';
 import { Navigate } from 'react-router-dom';
+import NavBar from '../../Components/ui/NavBar';
+import TopNavbar from '../../Components/ui/TopNavBar';
+import CreateNote from '../Note/CreateNote';
+import "./home.css"
+import DisplayNote from '../Note/DisplayNote';
+import Note from '../Note/Note';
 
-function HomePage() {
+function Expenditure() {
   const [isLoggingOut,setIsLoggingOut]=useState(false)
   const {isloggedIn} = useAuth()
   const handleClick = (e)=>{
@@ -14,24 +20,14 @@ if(!isLoggingOut){
 }
   }
   return (
-    <div>
+    <div className='home-page-container'>
+      <TopNavbar />
       {/* this is just to test code. feel free to comment the code below and work */}
     {!isloggedIn && (<Navigate to={"/"} replace={true} />)}
-     <p style={{color:"black", fontSize:"5rem"}}>this is the final home page when user logs in</p> 
-      <button 
-      style={{
-        background:"blue",
-        color:"white", 
-        borderRadius:'25px',
-        width:"7rem",
-        height:"3rem",
-        margin:"5px auto 0",
-        marginLeft:"50%"
-      }}
-      onClick={(e)=>{handleClick(e)}}
-      >Logout</button>
+    
+    <div>Add expenditure code below this div</div>
+     <NavBar />
     </div>
   )
 }
-
-export default HomePage
+export default Expenditure

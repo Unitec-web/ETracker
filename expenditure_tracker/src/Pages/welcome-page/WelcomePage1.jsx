@@ -5,10 +5,10 @@ import ellipDack from  '../../Icons/ellipse1.png'
 import ellipLight from '../../Icons/ellipse2.png'
 import rightArrow from '../../Icons/Arrow_right.png'
 import { Link } from 'react-router-dom';
+
 function WelcomePage1() {
   return (
     <div className="container">
-
     <div className="flex-container">
       <div className="left-column">
         <div className="welcome-message">
